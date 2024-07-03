@@ -15,10 +15,14 @@ const stackoverflowComponent = async (data = {}) => {
     link,
   } = val.items[0];
 
+  let margin_value = margin ? margin : 12;
+  const width = 439 + 2 * (margin_value ? margin_value : 0);
+  const height = 153 + 2 * (margin_value ? margin_value : 0);
+
   return `
-      <svg xmlns="http://www.w3.org/2000/svg" width="465" height="200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <style>${stackoverflowStyles(margin, fill, textfill, shadow)}</style>
-      <foreignObject  width="490" height="220">
+      <foreignObject  width="${width}" height="${height}">
       <div class="container${
         theme == "dark" ? " dark-card" : " "
       }"  xmlns="http://www.w3.org/1999/xhtml">
