@@ -33,6 +33,7 @@ const createComponent = async (component, params = {}) => {
     svgfill,
     desc,
     scale,
+    shadow,
   } = params;
   switch (component) {
     case "linearprogress":
@@ -118,6 +119,7 @@ const createComponent = async (component, params = {}) => {
             theme,
             fill,
             textfill,
+            shadow,
           });
         }
       } else {
