@@ -15,8 +15,12 @@ const stackoverflowComponent = async (data = {}) => {
     link,
   } = val.items[0];
 
+  margin = margin ? margin : 12;
+  width = 439 - 2 * (margin ? margin : 0);
+  height = 153 - 2 * (margin ? margin : 0);
+
   return `
-      <svg xmlns="http://www.w3.org/2000/svg" width="465" height="200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <style>${stackoverflowStyles(margin, fill, textfill, shadow)}</style>
       <foreignObject  width="490" height="220">
       <div class="container${
