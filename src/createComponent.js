@@ -52,10 +52,10 @@ const createComponent = async (component, params = {}) => {
             "sparkle",
           ].includes(design)
         ) {
-          return linearProgress({ skill, value, design, fill });
+          return linearProgress({ skill, value, design, margin, fill, shadow });
         } else {
           let design = undefined;
-          return linearProgress({ skill, value, design, fill });
+          return linearProgress({ skill, value, design, margin, fill, shadow });
         }
       } else {
         return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
@@ -73,8 +73,10 @@ const createComponent = async (component, params = {}) => {
           const data = val[0];
           data["role"] = role;
           data["location"] = location;
+          data["margin"] = margin;
           data["fill"] = fill;
           data["textfill"] = textfill;
+          data["shadow"] = shadow;
           if (duration != undefined) {
             if (duration.includes("m") || duration.includes("M")) {
               let value = duration.replace(/[A-Za-z]/, "");
@@ -96,9 +98,11 @@ const createComponent = async (component, params = {}) => {
       if (logo != undefined) {
         return logoComponent({
           logo,
+          margin,
           fill,
           text,
           textfill,
+          shadow,
           animation,
           svgfill,
           desc,
@@ -133,7 +137,7 @@ const createComponent = async (component, params = {}) => {
         if (val.message == "Not Found") {
           return faultComponent();
         }
-        return contributorsComponent({ reponame, repoowner, val });
+        return contributorsComponent({ reponame, repoowner, val, fill, shadow });
       } else {
         return faultComponent();
       }
@@ -143,13 +147,15 @@ const createComponent = async (component, params = {}) => {
       const quotes = await fetchData(Links().api.quotes);
       return quoteComponent({
         ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],
+        margin,
         fill,
         textfill,
+        shadow,
       });
     case "text":
-      return userDp({ text, textfill, fill });
+      return userDp({ text, textfill, margin, fill, shadow });
     case "button":
-      return Button({ fill, scale, text, textfill });
+      return Button({ margin, fill, scale, text, textfill, shadow });
     case "star-rating":
       if (skill && text) {
         return starRating({
