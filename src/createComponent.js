@@ -117,6 +117,7 @@ const createComponent = async (component, params = {}) => {
           return stackoverflowComponent({
             val,
             theme,
+            margin,
             fill,
             textfill,
             shadow,
