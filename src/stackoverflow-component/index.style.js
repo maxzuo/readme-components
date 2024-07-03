@@ -16,7 +16,7 @@ const stackoverflowStyle = (fill, textfill, shadow) => {
     margin:12px;
     font-size: 13px;
     color: ${textfill ? `#${textfill}` : "#24292e"};
-    box-shadow: ${shadow === false ? "none" : "0 2px 10px 3px rgb(0 0 0 / 0.2)"};
+    box-shadow: ${shadow ? `${shadow}` : "0 2px 10px 3px rgb(0 0 0 / 0.2)"};
     }
     .section1{
     display: flex; align-items: center;
