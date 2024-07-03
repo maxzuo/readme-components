@@ -17,6 +17,7 @@ const createComponent = async (component, params = {}) => {
     skill,
     value,
     design,
+    margin,
     fill,
     duration,
     company,
