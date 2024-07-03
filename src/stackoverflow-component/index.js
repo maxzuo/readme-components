@@ -15,9 +15,9 @@ const stackoverflowComponent = async (data = {}) => {
     link,
   } = val.items[0];
 
-  margin = margin ? margin : 12;
-  width = 439 - 2 * (margin ? margin : 0);
-  height = 153 - 2 * (margin ? margin : 0);
+  let margin_value = margin ? margin : 12;
+  const width = 439 - 2 * (margin_value ? margin_value : 0);
+  const height = 153 - 2 * (margin_value ? margin_value : 0);
 
   return `
       <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
