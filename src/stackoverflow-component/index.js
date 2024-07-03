@@ -22,7 +22,7 @@ const stackoverflowComponent = async (data = {}) => {
   return `
       <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <style>${stackoverflowStyles(margin, fill, textfill, shadow)}</style>
-      <foreignObject  width="490" height="220">
+      <foreignObject  width="${width}" height="${height}">
       <div class="container${
         theme == "dark" ? " dark-card" : " "
       }"  xmlns="http://www.w3.org/1999/xhtml">
