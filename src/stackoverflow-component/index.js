@@ -1,7 +1,7 @@
 const stackoverflowStyles = require("./index.style");
 const imgFetcher = require("../utils/imgFetcher");
 const stackoverflowComponent = async (data = {}) => {
-  const { val, theme, fill, textfill } = data;
+  const { val, theme, margin, fill, textfill, shadow } = data;
   const {
     profile_image,
     website_url,
@@ -17,9 +17,9 @@ const stackoverflowComponent = async (data = {}) => {
 
   return `
       <svg xmlns="http://www.w3.org/2000/svg" width="465" height="200">
-    <style>${stackoverflowStyles(fill, textfill)}</style>
+    <style>${stackoverflowStyles(margin, fill, textfill, shadow)}</style>
       <foreignObject  width="490" height="220">
-      <div class="container ${
+      <div class="container${
         theme == "dark" ? " dark-card" : " "
       }"  xmlns="http://www.w3.org/1999/xhtml">
       <div class="section1">

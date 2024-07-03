@@ -1,5 +1,5 @@
-const contributorsStyle = () => {
-  return `		   
+const contributorsStyle = (margin, shadow) => {
+  return `
   a{
     text-decoration: none;
     color:inherit;
@@ -10,10 +10,10 @@ const contributorsStyle = () => {
     border-radius: 4px;
     background: #fafafa;
     max-width: 405px;
-    margin:12px;
+    margin: ${margin ? `${margin}` : "12px"};
     font-size: 13px;
     color: #24292e;
-    box-shadow:0 2px 10px 3px rgb(0 0 0 / 0.2);
+    box-shadow: ${shadow ? `${shadow}` : "0 2px 10px 3px rgb(0 0 0 / 0.2)"};
     }
         .header{
         	border-top-right-radius:4px;
@@ -36,7 +36,7 @@ const contributorsStyle = () => {
     }
     .name:first-letter{
        text-transform: uppercase;
-    } 
+    }
     .header .image{
     width: 18px; height: 18px; border-radius: 15%;
     }
@@ -99,7 +99,7 @@ const contributorsStyle = () => {
     }
     .dark-text{
         color:white !important;
-    }       
+    }
     .divider{
     	height:0.7px;
     	width: 100%;

@@ -1,6 +1,6 @@
 const colorFiller = require('../utils/colorFiller')
 const ButtonStyles = (data = {}) => {
-    let {fill, scale, textfill}  = data;
+    let {margin, fill, scale, textfill, shadow}  = data;
     fill = fill || "#007bff";
     textfill = textfill || "#ffffff";
     scale = scale || "default"
@@ -13,7 +13,9 @@ const ButtonStyles = (data = {}) => {
           font-weight: 400;
           text-align: center;
           vertical-align: middle;
-          border: 1px solid transparent;     
+          border: 1px solid transparent;
+          margin: ${margin ? `${margin}` : "0"};
+          box-shadow: ${shadow ? `${shadow}` : "none"};
           }
     `
 }
@@ -24,7 +26,7 @@ const ButtonSizeHelper = (size) => {
         "font-size: 1rem;" +
         "line-height: 1.5;" +
         "border-radius: .25rem;" +
-        "padding: .375rem .75rem;" 
+        "padding: .375rem .75rem;"
         : (size === "small" ?
                 "font-size: .875rem;" +
                 "line-height: 1.5;" +

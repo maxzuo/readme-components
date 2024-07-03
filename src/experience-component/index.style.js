@@ -11,7 +11,6 @@ const experienceComponentStyles = (data) => {
       .flex-container {
         margin:8px;
         padding:9px;
-        display: flex;
         background-color: #efefef;
         border-radius: 6px;
         width: auto;
@@ -45,7 +44,7 @@ const experienceComponentStyles = (data) => {
             ? "0px"
             : "auto 10px auto 0px"
         };
-           }      
+           }
       .img-background,
       img {
         height: 40px;
@@ -85,7 +84,7 @@ const experienceComponentStyles = (data) => {
         font-size:14.5px;
       }
       .value::first-letter{
-        text-transform:uppercase;        
+        text-transform:uppercase;
       }
       `;
 };

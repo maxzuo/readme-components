@@ -5,7 +5,7 @@ const faultComponent = require("../fault-component");
 const Links = require("../utils/links")
 
 const contributorsComponent = async (data = {}) => {
-  let { val, reponame } = data;
+  let { val, reponame, margin, shadow } = data;
   if (
     val.documentation_url != "https://developer.github.com/v3/#rate-limiting"
   ) {
@@ -47,7 +47,7 @@ const contributorsComponent = async (data = {}) => {
 
     return `
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="${50 + 46 * count}">
-<style>${contributorsStyle()}</style>
+<style>${contributorsStyle(margin, shadow)}</style>
 <foreignObject width="450" height="${50 + 46 * count}">
 <div class="container" xmlns="http://www.w3.org/1999/xhtml">
 <div class="header">
