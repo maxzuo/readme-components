@@ -1,6 +1,6 @@
 const colorFiller = require('../utils/colorFiller')
 
-const stackoverflowStyle = (fill, textfill, shadow) => {
+const stackoverflowStyle = (margin, fill, textfill, shadow) => {
   return `      a{
     text-decoration: none;
     color:inherit;
@@ -13,7 +13,7 @@ const stackoverflowStyle = (fill, textfill, shadow) => {
     background: ${fill ? colorFiller(fill) : "#fafafa"};
     padding: 24px 17px;
     max-width: 405px;
-    margin:12px;
+    margin: ${margin ? `${margin}` : "12px"};
     font-size: 13px;
     color: ${textfill ? `#${textfill}` : "#24292e"};
     box-shadow: ${shadow ? `${shadow}` : "0 2px 10px 3px rgb(0 0 0 / 0.2)"};

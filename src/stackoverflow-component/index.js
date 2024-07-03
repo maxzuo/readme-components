@@ -19,7 +19,7 @@ const stackoverflowComponent = async (data = {}) => {
       <svg xmlns="http://www.w3.org/2000/svg" width="465" height="200">
     <style>${stackoverflowStyles(fill, textfill, shadow)}</style>
       <foreignObject  width="490" height="220">
-      <div class="container ${
+      <div class="container${
         theme == "dark" ? " dark-card" : " "
       }"  xmlns="http://www.w3.org/1999/xhtml">
       <div class="section1">
@@ -36,7 +36,6 @@ const stackoverflowComponent = async (data = {}) => {
             </a>
           </span>
           <span>${location ? location : ""}</span>
-          <span>${shadow ? shadow : ""}</span>
         </div>
       </div>
       <div class="report">
