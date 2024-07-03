@@ -36,6 +36,7 @@ const stackoverflowComponent = async (data = {}) => {
             </a>
           </span>
           <span>${location ? location : ""}</span>
+          <span>${shadow ? shadow : ""}</span>
         </div>
       </div>
       <div class="report">
